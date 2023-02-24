@@ -18,9 +18,15 @@ class SoalRepository implements SoalContract {
       return $input;
    }
 
+   public function edit ($id) {
+      $data = Soal::find($id);
+      return $data;
+   }
+
    public function update($data, $id_soal) {
       $edit = Soal::find($id_soal);
       $edit->update($data);
+
    }
 
    public function destroy($id_soal) {

@@ -34,16 +34,30 @@ class SoalController extends Controller
 
     }
 
+    public function edit($id) {
+        $data = $this->soalContract->edit($id);
+        return response()->json([
+            'Data' => $data
+        ]);
+
+    }
+
     public function update (Request $request, $id) {
 
         $this->soalContract->update($request->all(), $id);
-        return response()->json(['status' => 'success update']);
+        return response()->json([
+            'status' => 'success update',
+            'Data' => Soal::find($id)
+        ]);
 
     }
 
     public function destroy ($id) {
         $this->soalContract->destroy($id);
-        return response()->json(['status' => 'success delete', 'data' => Soal::all()]);
+        return response()->json([
+            'status' => 'success delete',
+            'data' => Soal::all()
+        ]);
 
     }
 
