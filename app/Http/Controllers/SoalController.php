@@ -34,6 +34,18 @@ class SoalController extends Controller
 
     }
 
+    public function jawab(Request $request, $id_soal) {
+
+        $data = $request->all();
+        // dd($data);
+        $this->soalContract->jawab($data, $id_soal);
+        return response()->json([
+            'status' => 'success jawab',
+            'Data' => Soal::find($id_soal)
+        ]);
+
+    }
+
     public function edit($id) {
         $data = $this->soalContract->edit($id);
         return response()->json([

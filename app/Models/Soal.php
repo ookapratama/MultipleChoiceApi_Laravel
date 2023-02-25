@@ -16,6 +16,7 @@ class Soal extends Model
         'pilD',
         'kunci',
         'status',
-        'score'
+        'score',
+        'jawab'
     ];
 }

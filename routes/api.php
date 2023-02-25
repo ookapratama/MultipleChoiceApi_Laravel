@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'soal','namespace' => 'App\Http\Controllers'],function () {
     Route::get('/', 'SoalController@index')->name('index.soal');
     Route::post('/store', 'SoalController@store')->name('store.soal');
+    Route::put('/jawab/{id}', 'SoalController@jawab')->name('jawab.soal');
     Route::get('/edit/{id}', 'SoalController@edit')->name('edit.soal');
     Route::put('/update/{id}', 'SoalController@update')->name('update.soal');
     Route::delete('/destroy/{id}', 'SoalController@destroy')->name('destroy.soal');

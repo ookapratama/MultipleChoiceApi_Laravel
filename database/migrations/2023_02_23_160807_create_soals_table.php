@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('pilC');
             $table->string('pilD');
             $table->string('kunci');
-            $table->enum('status', ['benar', 'salah', 'tidak dijawab'])->default('tidak dijawab');
+            $table->enum('status', ['benar', 'salah', 'belum dijawab'])->default('belum dijawab');
             $table->integer('score');
+            $table->enum('jawab', ['A','B','C','D', ''])->default('');
             $table->timestamps();
         });
     }
