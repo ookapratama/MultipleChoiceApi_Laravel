@@ -9,6 +9,7 @@ class Soal extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'kategori_id',
         'soal',
         'pilA',
         'pilB',
@@ -19,4 +20,8 @@ class Soal extends Model
         'score',
         'jawab'
     ];
+
+    public function kategori() {
+        return $this->hasOne(Kategori::class, 'id', 'kategori_id');
+    }
 }

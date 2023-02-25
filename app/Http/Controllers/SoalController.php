@@ -55,7 +55,7 @@ class SoalController extends Controller
     }
 
     public function update (Request $request, $id) {
-
+        // dd($id);
         $this->soalContract->update($request->all(), $id);
         return response()->json([
             'status' => 'success update',

@@ -26,3 +26,7 @@ Route::group(['prefix' => 'soal','namespace' => 'App\Http\Controllers'],function
     Route::put('/update/{id}', 'SoalController@update')->name('update.soal');
     Route::delete('/destroy/{id}', 'SoalController@destroy')->name('destroy.soal');
 });
+
+Route::group(['prefix' => 'kategori','namespace' => 'App\Http\Controllers'],function () {
+    Route::get('/', 'KategoriController@index')->name('index.kategori');
+});
