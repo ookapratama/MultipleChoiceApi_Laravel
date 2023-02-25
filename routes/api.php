@@ -33,7 +33,8 @@ Route::group(['prefix' => 'kategori','namespace' => 'App\Http\Controllers'],func
     Route::get('/', 'KategoriController@index')->name('index.kategori');
 });
 
-// Login / Register
+// Login/Register
+Route::post('/login', [UserController::class, 'login']);
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/show_user', [UserController::class, 'index']);
 Route::put('/forget_password/{id}', [UserController::class, 'forget_password']);

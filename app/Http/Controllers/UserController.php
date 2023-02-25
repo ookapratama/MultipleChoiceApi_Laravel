@@ -86,4 +86,8 @@ class UserController extends Controller
         ], 410);
 
     }
+
+    public function login(Request $request) {
+        
+    }
 }
