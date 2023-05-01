@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -34,7 +35,9 @@ Route::group(['prefix' => 'kategori','namespace' => 'App\Http\Controllers'],func
 });
 
 // Login/Register
-Route::post('/login', [UserController::class, 'login']);
-Route::post('/register', [UserController::class, 'register']);
-Route::get('/show_user', [UserController::class, 'index']);
-Route::put('/forget_password/{id}', [UserController::class, 'forget_password']);
+Route::get('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'cek_login'])->name('cek_login');
+// Route::post('/login', [UserController::class, 'login']);
+// Route::post('/register', [UserController::class, 'register']);
+// Route::get('/show_user', [UserController::class, 'index']);
+// Route::put('/forget_password/{id}', [UserController::class, 'forget_password']);

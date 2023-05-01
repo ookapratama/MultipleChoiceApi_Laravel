@@ -94,6 +94,7 @@ class UserController extends Controller
         ], 410);
     }
 
+    // untuk tampilan web
     public function login()
     {
         return view('login');
