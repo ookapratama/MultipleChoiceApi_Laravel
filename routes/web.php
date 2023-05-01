@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,6 @@ Route::group(['prefix' => 'soal','namespace' => 'App\Http\Controllers'],function
     Route::put('/update/{id}', 'SoalController@update')->name('update.soal');
     Route::delete('/destroy/{id}', 'SoalController@destroy')->name('destroy.soal');
 });
+
+Route::get('/login', [UserController::class, 'login']);
+Route::post('/login', [UserController::class, 'cek_login'])->name('cek_login');
