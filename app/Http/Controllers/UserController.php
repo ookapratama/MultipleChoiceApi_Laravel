@@ -32,10 +32,19 @@ class UserController extends Controller
         $validasi = Validator::make(
             $request->all(),
             [
-                'nama'      => 'required',
-                'stb'       => 'required|unique:users',
-                'email'     => 'required|unique:users|email',
-                'password'  => 'required|confirmed|min:8',
+                'tempat_lahir'      => 'required',
+                'tgl_lahir'         => 'required',
+                'agama'             => 'required',
+                'jkl'               => 'required',
+                'asal_sekolah'      => 'required',
+                'nm_ayah'           => 'required',
+                'nm_ibu'            => 'required',
+                'angkatan_kampus'   => 'required',
+                // 'registrasi_ulang'  => 'required',
+                // 'status'            => 'required',
+                'pengalaman_organisasi' => 'required',
+                'alasan_daftar'     => 'required',
+                'pas_foto'          => 'required',
             ]
         );
 

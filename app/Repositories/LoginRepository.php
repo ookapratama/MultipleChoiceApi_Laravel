@@ -26,8 +26,18 @@ class LoginRepository implements LoginContract
          ]
       ]);
 
+      
+
       $users = json_decode((string)$res->getBody(), true);
-      // dd($users);
+      
+      $input = User::create([
+         'nama' => $users['data'][0]['nmmhs'],
+         'stb' => $users['data'][0]['stb'],
+         'email' => $users['data'][0]['email'],
+         'no_hp' => $users['data'][0]['nohp'],
+         'alamat' => $users['data'][0]['alm'],
+      ]);
+      // dd($input);
       return $users;
    }
 }
